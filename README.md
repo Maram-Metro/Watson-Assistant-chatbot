@@ -12,5 +12,6 @@ the assistant responds to this entities :
 4. ***#thanks***
 5. ***#goodbyes***
 
+
 i added the Watson Assistant to the previous controll panel ***index.html***
-and i added a json file ***skill-My-First-Skill.json**
+and i added a json file ***skill-My-First-Skill.json***
