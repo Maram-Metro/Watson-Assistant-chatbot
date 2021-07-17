@@ -1,5 +1,5 @@
 # Watson-Assistant-chatbot
-## This project is a continuation of the previous project ***robot-arm-web-controller*** but they are seprate.
+## This project is a continuation of the previous projects ***robot-arm-web-controller*** and ***robot-base-web-controller***.
 ### the aim of the project is to created a ChatBot that respond to users requests.
 
 
