@@ -1,0 +1,301 @@
+{
+  "intents": [
+    {
+      "intent": "connect_to_robot",
+      "examples": [
+        {
+          "text": "how can i connect to it ?"
+        },
+        {
+          "text": "how can i connect to the robot ?"
+        },
+        {
+          "text": "how can i connect to this robot ?"
+        },
+        {
+          "text": "i want to connect to the robot"
+        },
+        {
+          "text": "i want to connect to the this robot"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "goodbyes",
+      "examples": [
+        {
+          "text": "bi"
+        },
+        {
+          "text": "bye"
+        },
+        {
+          "text": "good bye"
+        },
+        {
+          "text": "goodbye"
+        },
+        {
+          "text": "nice meeting you"
+        },
+        {
+          "text": "see u"
+        },
+        {
+          "text": "see ya"
+        },
+        {
+          "text": "see you"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "greetings",
+      "examples": [
+        {
+          "text": "hello"
+        },
+        {
+          "text": "helo"
+        },
+        {
+          "text": "hi"
+        },
+        {
+          "text": "hii"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "problems",
+      "examples": [
+        {
+          "text": "can i talk to real person"
+        },
+        {
+          "text": "i face problem"
+        },
+        {
+          "text": "i face problems"
+        },
+        {
+          "text": "i have problem"
+        },
+        {
+          "text": "i have problems"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "thanks",
+      "examples": [
+        {
+          "text": "thanks"
+        },
+        {
+          "text": "thanks for help"
+        },
+        {
+          "text": "thank u"
+        },
+        {
+          "text": "thank you"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_8_1626555835065",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Connection",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "the owner of the robot only how can give you the controller."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#connect_to_robot",
+      "dialog_node": "node_10_1626555176144",
+      "previous_sibling": "node_6_1626554902502"
+    },
+    {
+      "type": "standard",
+      "title": "Thanks",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "you are most welcome."
+              },
+              {
+                "text": "sure, any time"
+              },
+              {
+                "text": "my pleasurer"
+              },
+              {
+                "text": "glade it helped"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#thanks",
+      "dialog_node": "node_4_1626555787170",
+      "previous_sibling": "node_7_1626555664277"
+    },
+    {
+      "type": "standard",
+      "title": "Hello",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi, nice to meet you.\nI hope I Can help you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#greetings",
+      "dialog_node": "node_6_1626554902502",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Problems",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Talk to IT by email example@gmail.com"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#problems",
+      "dialog_node": "node_7_1626555664277",
+      "previous_sibling": "node_10_1626555176144"
+    },
+    {
+      "type": "standard",
+      "title": "Bye",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Bye, it was nice meeting you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#goodbyes",
+      "dialog_node": "node_8_1626555835065",
+      "previous_sibling": "node_4_1626555787170"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello ! I am assistant bot. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "My First Skill",
+  "language": "en",
+  "description": ""
+}
